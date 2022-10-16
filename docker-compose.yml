@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  jb_ubuntu_box:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - '2222:22'
+    volumes:
+      - jb_gateway_hacky:/home/maia
+
+volumes:
+  jb_gateway_hacky:
